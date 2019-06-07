@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+body {
+font-family: 'Roboto', sans-serif !important;
+background-color: #393838 !important;
+}
+
+@media only screen and (min-width: 801px) {
+
+  .login {
+    background-color: #1D1B1A !important;
+    width: 90vw;
+    height: 90vh;
+    margin-top: 5vh;
+    margin-left: 5vw;
+  }
+
+  .contact {
+    background-color: #4A6060 !important;
+    width: 90vw;
+    height: 90vh;
+    margin-top: 5vh;
+    margin-left: 5vw;
+  }
+
+  .newArt {
+    background-color: #1D1B1A !important;
+    width: 90vw;
+    height: 110vh;
+    margin-top: 5vh;
+    margin-left: 5vw;
+  }
+
+  .containerColour {
+    background-color: #4A6060 !important;
+    width: 40vw;
+    height: 50vh;
+  }
+
+  .containerColourArt {
+    background-color: #4A6060 !important;
+    width: 40vw;
+    height: 50vh;
+  }
+
+  h1 {
+  	color: #EE8200;
+  	font-size: 25px;
+  }
+
+  p {
+    color: #44CD44;
+    font-size: 23px;
+  }
+
+}
+
+
+
+
+@media only screen and (max-width: 800px) {
+
+  .login {
+    background-color: #1D1B1A !important;
+    width: 90vw;
+    height: 110vh;
+    margin-top: 5vh;
+    margin-left: 5vw;
+  }
+
+  .contact {
+    background-color: #4A6060 !important;
+    width: 90vw;
+    height: 90vh;
+    margin-top: 5vh;
+    margin-left: 5vw;
+  }
+
+  .newArt {
+    background-color: #1D1B1A !important;
+    width: 90vw;
+    height: 165vh;
+    margin-top: 5vh;
+    margin-left: 5vw;
+  }
+
+  .containerColour {
+    background-color: #4A6060 !important;
+    width: 40vw;
+    height: 50vh;
+  }
+
+  .containerColourArt {
+    background-color: #4A6060 !important;
+    width: 40vw;
+    height: 90vh;
+  }
+
+  h1 {
+  	color: #EE8200;
+  	font-size: 25px;
+  }
+
+  p {
+    color: #44CD44;
+    font-size: 20px;
+  }
+
+}
