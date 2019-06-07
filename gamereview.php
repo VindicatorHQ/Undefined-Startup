@@ -6,7 +6,6 @@ if (!$_SESSION['ingelogd']) {
 
 $username = $_SESSION['user'];
 
-$errorORsuccess = "";
 $error = "";
 if (isset($_POST['submit'])){
     if(!empty($_POST['title']) && !empty($_POST['summary']) && !empty($_POST['rating'])){
@@ -31,11 +30,9 @@ if (isset($_POST['submit'])){
       VALUES (NULL, '".$title."', '". $summary."', '". $rating."')";
 
       if ($conn->query($sql) === TRUE) {
-				$errorORsuccess = "Game Review is met succes toegevoegd";
-
+        echo "Game Review is met succes toegevoegd";
       } else {
-				$errorORsuccess = "Error: " . $sql . "<br>" . $conn->error;
-
+        echo "Error: " . $sql . "<br>" . $conn->error;
       }
 
     }
@@ -43,6 +40,7 @@ if (isset($_POST['submit'])){
        $error = "U moet een titel, samenvatting en rating opgeven";
     }
   }
+
 ?>
 
 <!doctype html>
@@ -78,7 +76,6 @@ if (isset($_POST['submit'])){
     <article class="containerColourArt container rounded shadow-lg p-3 mb-5 rounded">
 		<table>
 			<h1><?php echo $error; ?></h1>
-			<h1><?php echo $errorORsuccess; ?></h1>
 			<form method="POST" class="form-inline mb-5">
 				<div class="form-group row">
 			    <label for="inputEmail3" class="col-sm-2 col-form-label">Game Title:</label>
