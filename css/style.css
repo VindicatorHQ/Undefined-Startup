@@ -6,7 +6,7 @@ background-color: #393838 !important;
 
 @media only screen and (min-width: 801px) {
 
-  .login {
+  .loginContainer {
     background-color: #1D1B1A !important;
     width: 90vw;
     height: 90vh;
@@ -14,15 +14,15 @@ background-color: #393838 !important;
     margin-left: 5vw;
   }
 
-  .contact {
+  .homeContainer {
     background-color: #4A6060 !important;
     width: 90vw;
-    height: 90vh;
+    height: 150vh;
     margin-top: 5vh;
     margin-left: 5vw;
   }
 
-  .newArt {
+  .newReviewContainer {
     background-color: #1D1B1A !important;
     width: 90vw;
     height: 110vh;
@@ -36,7 +36,7 @@ background-color: #393838 !important;
     height: 50vh;
   }
 
-  .containerColourArt {
+  .containerColourReview {
     background-color: #4A6060 !important;
     width: 40vw;
     height: 50vh;
@@ -59,7 +59,7 @@ background-color: #393838 !important;
 
 @media only screen and (max-width: 800px) {
 
-  .login {
+  .loginContainer {
     background-color: #1D1B1A !important;
     width: 90vw;
     height: 110vh;
@@ -67,15 +67,15 @@ background-color: #393838 !important;
     margin-left: 5vw;
   }
 
-  .contact {
+  .homeContainer {
     background-color: #4A6060 !important;
     width: 90vw;
-    height: 90vh;
+    height: 350vh;
     margin-top: 5vh;
     margin-left: 5vw;
   }
 
-  .newArt {
+  .newReviewContainer {
     background-color: #1D1B1A !important;
     width: 90vw;
     height: 165vh;
@@ -86,23 +86,23 @@ background-color: #393838 !important;
   .containerColour {
     background-color: #4A6060 !important;
     width: 40vw;
-    height: 50vh;
+    height: 45vh;
   }
 
-  .containerColourArt {
+  .containerColourReview {
     background-color: #4A6060 !important;
     width: 40vw;
-    height: 90vh;
+    height: 85vh;
   }
 
   h1 {
   	color: #EE8200;
-  	font-size: 25px;
+  	font-size: 23px;
   }
 
   p {
     color: #44CD44;
-    font-size: 20px;
+    font-size: 18px;
   }
 
 }

@@ -25,12 +25,15 @@ if (isset($_POST['submit'])){
       $summary = $conn->real_escape_string($summary);
       $rating = safe($_POST['rating']);
       $rating = $conn->real_escape_string($rating);
+      $publication_date = safe($_POST['publication_date']);
+      $publication_date = $conn->real_escape_string($publication_date);
 
-      $sql = "INSERT INTO `games` (`id`, `title`, `summary`, `rating`)
-      VALUES (NULL, '".$title."', '". $summary."', '". $rating."')";
+      $sql = "INSERT INTO `games` (id, title, summary, rating, publication_date)
+      VALUES (NULL, '".$title."', '". $summary."', '". $rating."', '". $publication_date."')";
 
       if ($conn->query($sql) === TRUE) {
         echo "Game Review is met succes toegevoegd";
+        header("Location: index.php");
       } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
       }
@@ -52,7 +55,7 @@ if (isset($_POST['submit'])){
 	<meta name="Description" content="News">
 	<meta name="author" content="Christiaan van Haasteren">
 	<meta name="Keywords" content="News, games, review, PHP">
-<title>Add review - Startup</title>
+<title>Post Review - Startup</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -62,8 +65,8 @@ if (isset($_POST['submit'])){
 <body>
 	<main>
 
-	<section class="newArt rounded shadow-lg p-3 mb-5 rounded">
-		<img class="mb-5" src="images/Logo.png" alt="Foto">
+	<section class="newReviewContainer rounded shadow-lg p-3 mb-5 rounded">
+		<a href="index.php"><img class="mb-5" src="images/Logo.png" alt="Foto"></a>
 		<div class="progress mb-3">
 			<div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
 		</div>
@@ -73,47 +76,52 @@ if (isset($_POST['submit'])){
     <div class="progress mb-5">
       <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
-    <article class="containerColourArt container rounded shadow-lg p-3 mb-5 rounded">
+    <article class="containerColourReview container rounded shadow-lg p-3 mb-5 rounded">
 		<table>
 			<h1><?php echo $error; ?></h1>
 			<form method="POST" class="form-inline mb-5">
-				<div class="form-group row">
-			    <label for="inputEmail3" class="col-sm-2 col-form-label">Game Title:</label>
+				<article class="form-group row">
+			    <label for="GameTitle" class="col-sm-2 col-form-label">Game Title:</label>
 			    <div class="col-sm-10">
-			      <input name="title" type="text" class="form-control" id="inputEmail3" placeholder="Name of the Article">
+			      <input name="title" type="text" class="form-control" placeholder="Titel van het spel">
 			    </div>
-			  </div>
-			  <div class="form-group row">
-			    <label for="inputPassword3" class="col-sm-2 col-form-label">Game Summary:</label>
+			  </article>
+
+			  <article class="form-group row">
+			    <label for="GameSummary" class="col-sm-2 col-form-label">Game Summary:</label>
 			    <div class="col-sm-10">
-			      <textarea rows="7" cols="50" name="summary" type="text" class="form-control" id="inputPassword3" placeholder="samenvatting"></textarea>
+			      <textarea rows="7" cols="50" name="summary" type="text" class="form-control" placeholder="Samenvatting review"></textarea>
 			    </div>
-			  </div>
-        <div class="form-group row">
-          <label for="inputPassword3" class="col-sm-3 col-form-label">Rating tussen 1 en 10:</label>
-          <div class="col-sm-9">
-            <input name="rating" type="number" class="form-control" id="inputPassword3" placeholder="Voer hier een cijfer in">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="inputEmail3" class="col-sm-2 col-form-label">Publication Date:</label>
+			  </article>
+
+        <article class="form-group row">
+          <label for="Rating" class="col-sm-2 col-form-label">Rating:</label>
           <div class="col-sm-10">
-            <input name="username" type="date" class="form-control" id="inputEmail3" value=`${currentTime}`>
+            <input type="number" name="rating" class="form-control" placeholder="Voer hier een cijfer tussen de 1 en 10 in.">
           </div>
-        </div>
+        </article>
+
+        <article class="form-group row">
+          <label for="PublicationDate" class="col-sm-2 col-form-label">Publication Date:</label>
+          <div class="col-sm-10">
+            <input name="publication_date" type="date" class="form-control">
+          </div>
+        </article>
+
         <article class="list-group list-group-horizontal container">
 					<div class="col-sm-5"></div>
           <div class="col-sm-5">
-						<button type="submit" class="btn btn-danger btn-lg active rounded shadow-lg rounded">Add article</button>
+						<button name="submit" type="submit" class="btn btn-danger btn-lg active rounded shadow-lg rounded">Post review</button>
 					</div>
         </article>
+
 			</form>
 		</table>
 	</article>
 	<div class="progress mb-5">
 		<div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
 	</div>
-		<p class="">Christiaan © 2019. All rights reserved.</p>
+		<p>Christiaan © 2019. All rights reserved.</p>
 	</section>
 
 	</main>

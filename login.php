@@ -46,7 +46,7 @@ if (isset($_POST['submit'])){ // Checkt of er op de login knop gedrukt is
 	<meta name="Description" content="News">
 	<meta name="author" content="Christiaan van Haasteren">
 	<meta name="Keywords" content="News, games, review, PHP">
-<title>Undefined Login - Startup</title>
+<title>Game Review Login - Startup</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -56,8 +56,8 @@ if (isset($_POST['submit'])){ // Checkt of er op de login knop gedrukt is
 <body>
 	<main>
 
-	<section class="login rounded shadow-lg p-3 mb-5 bg-dark rounded">
-		<img class="mb-5" src="images/logo.png" alt="Foto">
+	<section class="loginContainer rounded shadow-lg p-3 mb-5 bg-dark rounded">
+		<a href="index.php"><img class="mb-5" src="images/Logo.png" alt="Foto"></a>
 		<div class="progress mb-5">
 			<div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
 		</div>
@@ -71,16 +71,16 @@ if (isset($_POST['submit'])){ // Checkt of er op de login knop gedrukt is
 				</div>
 
 				<div class="form-group row">
-			    <label for="inputEmail3" class="col-sm-2 col-form-label">Username:</label>
+			    <label for="Username" class="col-sm-2 col-form-label">Username:</label>
 			    <div class="col-sm-10">
-			      <input name="username" type="text" class="form-control" id="inputEmail3" placeholder="Username">
+			      <input name="username" type="text" class="form-control" placeholder="Username">
 			    </div>
 			  </div>
 
 			  <div class="form-group row">
-			    <label for="inputPassword3" class="col-sm-2 col-form-label">Password:</label>
+			    <label for="Password" class="col-sm-2 col-form-label">Password:</label>
 			    <div class="col-sm-10">
-			      <input name="password" type="password" class="form-control" id="inputPassword3" placeholder="Password">
+			      <input name="password" type="password" class="form-control" placeholder="Password">
 			    </div>
 			  </div>
 
@@ -97,7 +97,7 @@ if (isset($_POST['submit'])){ // Checkt of er op de login knop gedrukt is
 	<div class="progress mb-4">
 		<div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
 	</div>
-		<p class="">Christiaan © 2019. All rights reserved.</p>
+		<p>Christiaan © 2019. All rights reserved.</p>
 	</section>
 
 	</main>
