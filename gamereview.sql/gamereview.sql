@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `gebruikers` (
 
 INSERT INTO `gebruikers` (`id`, `username`, `password`) VALUES
 (1, 'admin', 'admin'),
-(2, 'vindicator', 'admin'),
+(2, 'vindicator', 'admin');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
