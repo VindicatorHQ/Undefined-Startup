@@ -1,41 +1,37 @@
 <?php
 $error = "";
-if (isset($_POST['submit'])){ // Checkt of er op de login knop gedrukt is
-    if(!empty($_POST['username']) && !empty($_POST['password'])) { // Checkt of er een username en wachtwoord is ingevuld
+if (isset($_POST['submit'])){
+    if(!empty($_POST['username']) && !empty($_POST['password'])){
 
       require("dbconnect.php");
-
-			function safe($input){
-        $input = trim($input); // Haalt de spaties weg
-        $input = stripslashes($input); // Haalt de slashes weg
-        $input = htmlspecialchars($input); // Zorgt ervoor dat er door middel van javascript of andere script talen niet de website kunnen slopen
-        return $input;
+      function safe($invoer){
+        $invoer = trim($invoer);
+        $invoer = stripslashes($invoer);
+        $invoer = htmlspecialchars($invoer);
+        return $invoer;
       }
 
-      $username = safe($_POST['username']); // Voert de functie safe uit die dient tegen XSS
-      $username = $conn->real_escape_string($username); // Maakt de SQL injectie niet schadelijk
-      $password = safe($_POST['password']); // Voert de functie safe uit die dient tegen XSS
-      $password = $conn->real_escape_string($password); // Maakt de SQL injectie niet schadelijk
+      $username = safe($_POST['username']);
+      $username = $conn->real_escape_string($username);
+      $password = safe($_POST['password']);
+      $password = $conn->real_escape_string($password);
 
-      $sql = "SELECT * FROM gebruikers WHERE username = '".$username."' AND password = '".$password."'";
+      $sql = "INSERT INTO `gebruikers` (id, username, password)
+      VALUES (NULL, '".$username."', '". $password."')";
 
-      if($result = $conn->query($sql)){
-        $aantal = $result->num_rows;
-        if($aantal == 1){
-          $user = $result->fetch_row();
-          session_start();
-          $_SESSION['user'] = $user[1];
-          $_SESSION['ingelogd'] = true;
-          header("Location: gamereview.php");
-        }
+      if ($conn->query($sql) === TRUE) {
+        echo "Nieuwe gebruiker succesvol aangemaakt!";
+        header("Location: login.php");
+      } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+      }
 
-    } else {
-       $error = "Incorrect username or password. Please try again.";
     }
-  } else {
-		 $error = "Vul een gebruikersnaam en wachtwoord in.";
-	}
-}
+       else {
+       $error = "U moet een username en wachtwoord opgeven";
+       echo $error;
+    }
+  }
 ?>
 
 <!doctype html>
@@ -68,7 +64,7 @@ if (isset($_POST['submit'])){ // Checkt of er op de login knop gedrukt is
 				<div class="form-group row">
 					<div class="col-sm-10">
 						<?php echo $error; ?>
-            <h1>Log hier in op de website!</h1>
+            <h1>Maak hier een gebruiker aan!</h1>
 					</div>
 				</div>
 

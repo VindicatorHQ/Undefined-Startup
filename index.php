@@ -25,6 +25,18 @@ require("dbconnect.php");
 
 	<section class="homeContainer rounded shadow-lg p-3 mb-5 rounded">
 		<a href="index.php"><img class="mb-5" src="images/Logo.png" alt="Foto"></a>
+    <article class="row">
+      <div class="col-3">
+        <a class="btn btn-primary" href="login.php" role="button">Inloggen</a>
+      </div>
+      <div class="col-3">
+        <a class="btn btn-primary" href="signup.php" role="button">Gebruiker aanmaken</a>
+      </div>
+      <div class="col-3">
+        <a class="btn btn-primary" href="gamereview.php" role="button">Review Schrijven</a>
+      </div>
+    </article>
+
 		<div class="progress mb-5">
 			<div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
 		</div>
@@ -36,7 +48,7 @@ require("dbconnect.php");
           <th scope="col">Rating</th>
         </tr>
       </thead>
-      <?php $sql = "SELECT title, summary, rating FROM games ORDER BY rating DESC";
+      <?php $sql = "SELECT title, summary, rating FROM games ORDER BY title ASC";
       $result = $conn->query($sql);
 
       if ($result->num_rows > 0) {
@@ -58,9 +70,6 @@ require("dbconnect.php");
       ?>
     </table>
 
-
-    <a class="btn btn-primary" href="login.php" role="button">Inloggen</a>
-    <a class="btn btn-primary" href="gamereview.php" role="button">Review Schrijven</a>
 	<div class="progress mb-5">
 		<div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
 	</div>

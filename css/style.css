@@ -23,9 +23,9 @@ background-color: #393838 !important;
   }
 
   .newReviewContainer {
-    background-color: #1D1B1A !important;
+    background-color: #4A6060 !important;
     width: 90vw;
-    height: 110vh;
+    height: 105vh;
     margin-top: 5vh;
     margin-left: 5vw;
   }
@@ -33,11 +33,11 @@ background-color: #393838 !important;
   .containerColour {
     background-color: #4A6060 !important;
     width: 40vw;
-    height: 50vh;
+    height: 40vh;
   }
 
   .containerColourReview {
-    background-color: #4A6060 !important;
+    background-color: #666666 !important;
     width: 40vw;
     height: 50vh;
   }
@@ -53,9 +53,6 @@ background-color: #393838 !important;
   }
 
 }
-
-
-
 
 @media only screen and (max-width: 800px) {
 
@@ -76,7 +73,7 @@ background-color: #393838 !important;
   }
 
   .newReviewContainer {
-    background-color: #1D1B1A !important;
+    background-color: #4A6060 !important;
     width: 90vw;
     height: 165vh;
     margin-top: 5vh;
@@ -90,7 +87,7 @@ background-color: #393838 !important;
   }
 
   .containerColourReview {
-    background-color: #4A6060 !important;
+    background-color: #666666 !important;
     width: 40vw;
     height: 85vh;
   }
